@@ -14,12 +14,10 @@ app.get('/homes/:id', (req, res) => {
   res.sendFile(path.resolve('public', 'index.html'));
 });
 
-
-
-// app.get('/', (req, res) => {
-//   console.log('here')
-//   res.sendFile(path.resolve('public', 'index.html'))
-// });
+app.get('/', (req, res) => {
+  console.log('here');
+  res.sendFile(path.resolve('public', 'index.html'));
+});
 
 // Handling asset requests for webpack bundles by passing off requests to the bundles router
 app.use('/bundles', router.bundles);
