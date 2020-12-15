@@ -1,3 +1,4 @@
+const newrelic = require('newrelic');
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
@@ -10,9 +11,10 @@ app.use(express.static(PUBLIC_DIR));
 app.use(morgan('dev'));
 
 app.get('/homes/:id', (req, res) => {
-  console.log('here')
-  res.sendFile(path.resolve('public', 'index.html'))
+  res.sendFile(path.resolve('public', 'index.html'));
 });
+
+
 
 // app.get('/', (req, res) => {
 //   console.log('here')
